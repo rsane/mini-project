@@ -1,0 +1,170 @@
+<html>
+
+<head>
+    <title>Sell Keyboard/Mouse</title>
+    <link rel="stylesheet" href="prod_sell.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h2>RAZER</h2>
+        </div>
+        <ul>
+            <li><a href="http://localhost/miniproj/MiniProject_html.php">Home</a></li>
+            <li><a href="ProductOp.html">Product</a></li>
+            <li><a href="sell.html">Sell Items</a></li>
+            <li><a href="http://localhost/miniproj/resale.html">Resale Products</a></li>
+            <li><a href="" class="drop" id="drop">
+                <a href="https://localhost/miniproj/cart_html.php"><i class="fa fa-shopping-cart"></i></a> &nbsp; 
+                <a href="https://localhost/miniproj/logout.php"><i class="fa fa-sign-out-alt"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="items__container">
+        <div class="items__form">
+            <div class="items__header">Sell your keyboard/mouse for instant cash!</div>
+            <div class="items__layout">
+                <div class="assure">
+                    <ul class="assure_list">
+                        <li><i class="fa fa-check"></i> Minumum Value
+                        <li><i class="fa fa-check"></i> Safe & Hassel-free
+                        <li><i class="fa fa-check"></i> Free Doorstep Pickup
+                    </ul>
+                </div>
+                <div class="prod_header" id="select">Search your keyboard/mouse brand and type</div>
+                <div class="prod_select">
+                    <input list="products" id="product" class="prod_dropdown" onchange="input_details()">
+                    <datalist id="products">
+                        <option value="Microsoft keyboard/mouse">
+                        <option value="HP keyboard/mouse">
+                        <option value="Zebronics keyboard/mouse">
+                            </select>
+                </div>
+                <!--shows after user selects the product name -->
+                <div class="chk_product" id="chk" style="display: none;">
+                    <div class="chk_working">
+                        <b>Is the keyboard/mouse working?</b><br><br>
+                        <input type="radio" id="yes_work" name="chk_work" value="yes" required /> Yes
+                         <input type="radio" name="chk_work" id="no_work" value="no" checked> No
+                    </div>
+                    <div class="chk_old">
+                        <b>Select the year of purchare</b> <br><br>
+                        <select name="age" id="years">
+                            <option value="older">&gt; 5 years</option>
+                            <option value="old">1 - 5 years</option>
+                            <option value="new">&lt; 1 year</option>
+                        </select>
+                    </div>
+                    <div class="chk_resolution">
+                        <b>Does the keyboard/mouse has RGB lights?</b> <br><br>
+                        <input type="radio" id="yes" name="chk_rgb" value="yes_rgb" required> Yes 
+                        <input type="radio" name="chk_rgb" id="no" value="no_rgb" checked> No
+                    </div>
+                    <div class="chk_refresh">
+                        <b>Is the keyboard/mouse wireless?</b> <br><br>
+                        <input type="radio" id="yes" name="chk_wire" value="yes_wire" required> Yes 
+                        <input type="radio" name="chk_wire" id="no" value="no_wire" checked> No
+                    </div>
+                    <div class="chk_quote">
+                        <b>Quoted price for resale</b> <br><br>
+                        <font color="red">Rs. <span id="quote"></span></font>
+                    </div>
+                    <div class="chk_img">
+                        <b>Provide us with a image of your keyboard/mouse</b> <br><br>
+                        <input type="file" id="img" name="img" accept="image/*" required>
+                    </div>
+                </div>
+                <div id="chk_btn" style="display: none;">
+                    <center>
+                        <input class="btn1" type="submit" value="Get Quote" onclick="quote('mouse')">
+                        <input class="btn2" type="submit" value="Go Back" onclick="back()">
+                        <input class="btn3" type="submit" value="Sell!" id="b3" disabled>
+                    </center>
+                </div>
+            </div>
+        <div>
+    </div>
+</body>
+<script type="text/javascript">
+    function input_details() {
+        document.getElementById("select").style.display = "none";
+        document.getElementById("product").style.display = "none";
+        document.getElementById("chk").style.display = "grid";
+        document.getElementById("chk_btn").style.display = "block";
+    }
+
+    function back() {
+        document.getElementById("select").style.display = "block";
+        document.getElementById("product").style.display = "inline";
+        document.getElementById("product").value = "";
+        document.getElementById("chk").style.display = "none";
+        document.getElementById("chk_btn").style.display = "none";
+    }
+    function quote(prod) {
+        if (prod == "mouse") {
+            var price = 800;
+            var prod_name = document.getElementById("product").value;
+
+            //if item is working or not
+            if (document.getElementById('yes_work').checked == true) { price -= 50; }
+            if (document.getElementById('no_work').checked == true) { price -= 700; }
+
+            //check if item is old
+            if (document.getElementById("years").value == "older") { price -= 500; }
+            if (document.getElementById("years").value == "old") { price -= 300; }
+            else { price -= 200; }
+
+            //icheck if keyboard/mouse has rgb
+            if (document.getElementById('yes_rgb').checked == true) { price -= 50; }
+            if (document.getElementById('no_rgb').checked == true) { price -= 100; }
+
+            //check if keyboard/mouse is wireless
+            if (document.getElementById('yes_wire').checked == true) { price -= 50; }
+            if (document.getElementById('no_wire').checked == true) { price -= 20; }
+
+            //if price is in -ve, then give quote as Rs. 10 orelse display price
+            if (Math.sign(price) == 1) { document.getElementById('quote').innerHTML = price; }
+            else { document.getElementById('quote').innerHTML = 10; }
+
+            //enable sell button
+            document.getElementById("b3").disabled = false;
+        }
+    }
+    
+        //using jquery and Ajax to input variables to php
+        $(document).ready(function () {
+            $("#b3").click(function () {
+                var prod_price = $("#quote").text();
+                var prod_name = $("#product").val();
+
+                //get the file name with extension
+                var prod_img = $('input[type=file]').val().split('\\').pop();
+
+                //get the extension
+                var ext = $('input[type=file]').val().split('.').pop();
+
+                //specify allowed extensions
+                var allowExt = new Array('jpg', 'jpeg', 'png');
+
+                //check if extension is of img only
+                if (jQuery.inArray(ext, allowExt) != -1) {
+
+                    //using ajax to input javascript/jquery data to php file
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost/miniproj/sell_prod.php",
+                        data: { name: prod_name, price: prod_price, img: prod_img },
+                        error: function (exception) {
+                            alert('Execption: ');
+                        }
+                    });
+                }
+                else {
+                    alert("Please enter image with extensions of .jpg, .jpeg and .png only!")
+                }
+            });
+        });
+</script>
+</html>

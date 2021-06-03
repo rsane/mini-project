@@ -1,0 +1,125 @@
+body {
+  background: url(images/tempbg2.jpg);
+}
+
+a,
+[type=submit] {
+  transition: all 0.25s ease-in;
+}
+
+.forgot_container {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  transform: translateY(-50%);
+  display: content;
+
+
+  width: 30rem;
+  height: 34rem;
+  border-radius: 0.1875rem;
+  box-shadow: 0px 0.1875rem 0.4375rem rgba(0, 0, 0, 0.25);
+}
+
+.container_child{
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  
+}
+
+.signup_form{
+  position: relative;
+  display: flex;
+  height: 135%;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2.5rem;
+  background: #fafafa;
+}
+
+i{
+  margin-top: 6%;
+  text-align: center;
+  color: #FF4B2B;
+}
+
+.headers{
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+h2{
+  font-weight: bold;
+}
+
+.form-group{
+	padding: 14px;
+	font-size: 18px;
+  margin-top: 10%;
+}
+
+.form_control {
+  background-color: transparent;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+  line-height: 1.5em;
+  
+}
+
+.foot{
+	text-align:center;
+}
+
+.btn--form {
+  border-radius: 20px;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 40px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.btn--form:focus, .btn--form:hover {
+  background:#ff3612;
+  transition: 0.5s;
+}
+
+.signup__link, .forgot__pass {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #999;
+}
+
+[type=text] {
+  color: #111;
+  text-align: center;
+}
+
+.list-inline li{
+	list-style-type: none;
+	text-align: center;
+	display:inline-flex;
+	padding: 10px;
+  margin-top: 4%;
+}
+
+.signup__link{
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #999;
+}
+
+.signup__link:focus, .signup__link:hover {
+  color: #ff3612;
+}

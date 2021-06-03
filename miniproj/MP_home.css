@@ -1,0 +1,546 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(51, 50, 50);
+    position: sticky;
+}
+
+.navbar{
+    background-color: rgb(5, 17, 17);
+    /* border-radius: 70px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    color: azure; 
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-around;
+    width: 78%;  /* change space between every word */
+}
+.navbar li{    
+    list-style: none;
+    margin: 2px 10px;    
+}
+    
+.navbar li a{
+    
+    text-decoration: none;
+    color: #a8e5e8;
+    letter-spacing: 3px; /* Change space between letters of the font in NAVBAR li */
+    font-size: 18px; /* change the size of the font in NAVBAR li*/
+}
+
+.logo{
+    color: cornsilk;
+    text-transform: uppercase;
+    letter-spacing: 16px;   
+    width: 32%; 
+    cursor: pointer;
+    padding-left: 19ch;
+}
+
+.downdrop-content{
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    display: none;
+}
+
+.dropdown{
+    width: 10%;
+    height: 20%;
+    float: right;
+    margin-right: 30px;
+    margin-top: 5px;
+}
+
+.dropdown li{
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgb(5, 17, 15);
+}
+
+.dropdown li:hover{
+    background-color: rgb(10, 34, 30);
+}
+
+.dropdown a{
+    color: rgb(42, 172, 172);
+}
+
+.dropdown i{
+    padding: 7px;
+    transform: scale(1.1,1);
+}
+
+.drop i{
+    transform: scale(1.5,1.5);
+}
+
+.down-arrow i{
+    transform: scale(1,1);
+    
+}
+
+/*for scroll to top button*/
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgb(75, 59, 85); /* Set a background color */
+    color: rgb(150, 150, 150); /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 40px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+    background-color: rgb(47, 37, 53); /* Add a dark-grey background on hover */
+    color: white;
+}
+
+.topbtn i{
+    transform: scale(1.3, 1.8);
+}
+
+.search-box{
+    margin-top: 20px;
+    height: 28px;
+    z-index: 8;
+}
+
+.search-box i{
+    position: absolute;
+    z-index: 100;
+    margin-left: 15px;
+    margin-top: 6px;
+    color: wheat;
+    font-size: 20px;
+    transform: scale(1.1,1.0);
+}
+
+input[type=text]{
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 1px 12px;
+    position: relative;
+    text-indent: 35px;
+    border: 1px solid wheat;
+    color: wheat;
+    background-color: black;
+    z-index: 9;
+}
+
+.result{
+    width: 30%;
+    margin-left: 35%;
+    text-indent: 20px;
+    background-color: black;
+    z-index: 10;
+    position: absolute;
+    z-index: 8;
+}
+
+.result p{
+    background-color: rgb(5, 17, 17);
+    width: 100%;
+    height: 60%;
+    border-radius: 5px;
+    margin-top: 2px;
+    line-height: 50px;
+}
+
+.result a{
+    text-decoration: none;
+    background-color: rgb(5, 17, 17);
+    font-size: 25px;
+    color: #a8e5e8;
+    border-radius: 5px;
+}
+
+.cover{
+    height: 92vh;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(27, 27, 34, 0.7),rgba(26, 26, 32, 0.7)),url(img/laptop2.jpg); */
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(images/pc2.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-position: right 2%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.greet{
+    text-align: center;
+    margin-top: 1%;
+    z-index: 15;
+}
+
+/* .main-img i{
+    color: white;
+    transform: scale(3.4,3.5);
+} */
+
+.main-img img{
+    width: 150px;
+    height: 150px;
+}
+
+.main-logo{
+    color: cornsilk;
+    text-transform: uppercase;
+    letter-spacing: 16px;   
+    width: 32%; 
+    cursor: pointer;
+    margin-left: 35%;
+    margin-top: 1%;
+    font-size: 35px;
+    text-shadow: 3px 3px 5px orange;
+    text-align: center;
+
+}
+
+.main-content{
+    text-align: center;
+    display: inline-flex;
+}
+
+.main-content a{
+    color: beige;
+}
+
+.box1, .box2, .box3{
+    width: 190px;
+    height: 240px;
+    /* line-height: 250px; */
+    font-size: 18px;
+    border-radius: 10px;
+    margin:40px 80px;
+    color: white;
+    /* box-shadow: -1px 0px 10px 7px orange; */
+}
+
+/* .box1, .box2, .box3 a{
+    text-decoration: none;
+}
+*/
+.box1 h2, .box2 h2, .box3 h2{
+    padding-top: 50px;
+    text-align: center;
+}
+
+.box1 h5, .box2 h5, .box3 h5{
+    bottom: 60px;
+    padding-top: 80px;
+    text-align: center;
+    color: yellowgreen;
+}
+
+.box1:hover, .box2:hover, .box3:hover{
+    transition: 0.2s;
+    filter: brightness(70%);
+    font-size: larger;
+}
+
+.box1{
+    box-shadow: 0px 0px 6px 2px lightyellow, inset 0px 0px 4px 2px lightyellow;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(images/keyboard.jpeg);
+    background-size: cover;
+    background-position:center;
+}
+
+.box2{
+    box-shadow: 0px 0px 6px 2px lightgreen, inset 0px 0px 4px 2px lightgreen;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(images/pc4.jpeg);
+    background-size: cover;
+    background-position:center;
+}
+
+.box3{
+    box-shadow: 0px 0px 6px 2px goldenrod, inset 0px 0px 4px 2px goldenrod;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(images/mouse.jpeg);
+    background-size: cover;
+    background-position:center;
+}
+
+
+
+
+
+/*
+.cover p{
+    text-align: center;
+    color: rgb(226, 226, 226);
+    font-size: 73px;
+    padding-top: 13%; 
+}
+*/
+.KeyboardImage{
+    min-height: 99vh;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(27, 27, 34, 0.7),rgba(26, 26, 32, 0.7)),url(img/keyboard6.jpg); */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/keyboard.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.left-disc{
+    padding-left: 10%;
+    text-align: left;
+    /*I took out from here to pass it to .triggerAnim*/
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-fill-mode: forwards; 
+   /*I also took out from here (for the same purpose).*/
+    animation-duration: 2s; 
+    animation-fill-mode: forwards; 
+    filter: blur(0px);
+}
+
+.KeyboardImage p{
+    color: rgb(226, 226, 226);
+    font-size: 73px;
+    padding-top: 13%; 
+}
+
+.left-text{
+    color: whitesmoke;
+    font-size: 20px;
+    width: 35%;
+    padding-top: 2%;
+}
+
+.prod_link{
+    color: yellowgreen;
+    padding-top: 1%;
+    font-size: 20px;
+}
+i{transform: scale(1.3,0.8);}
+a{
+    text-decoration: none;
+    color: yellowgreen;
+}
+a:hover{color: rgb(127, 170, 41);}
+
+
+.PCimage{
+    min-height: 99vh;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(img/pc1.jpg); */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(images/pc4.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.right-disc{
+    text-align: right;
+    padding-right: 10%;
+    /*I took out from here to pass it to .triggerAnim*/
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-fill-mode: forwards; 
+   /*I also took out from here (for the same purpose).*/
+    animation-duration: 2s; 
+    animation-fill-mode: forwards; 
+    filter: blur(0px);
+}
+
+.PCimage p{
+    color: rgb(226, 226, 226);
+    font-size: 73px;
+    padding-top: 13%; 
+}
+
+.right-text {
+    margin-left: 65%;
+    color: whitesmoke;
+    font-size: 20px;
+    width: 35%;
+    padding-top: 2%;
+}
+
+.prod_link{
+    color: yellowgreen;
+    padding-top: 1%;
+    font-size: 20px;
+}
+i{transform: scale(1.3,0.8);}
+a{
+    text-decoration: none;
+    color: yellowgreen;
+}
+a:hover{color: rgb(127, 170, 41);}
+
+.right-disc p, .left-disc p{
+    font-weight: bold;
+}
+
+.MouseImage{
+    min-height: 99vh;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(27, 27, 34, 0.7),rgba(26, 26, 32, 0.7)),url(img/mouse3.jpg); */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/mouse.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    /*I took out from here to pass it to .triggerAnim*/
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-fill-mode: forwards; 
+    /*I also took out from here (for the same purpose).*/
+    animation-duration: 2s; 
+    animation-fill-mode: forwards; 
+    filter: blur(0px);
+}
+
+.MouseImage p{
+    color: rgb(226, 226, 226);
+    font-size: 73px;
+    padding-top: 13%; 
+}
+
+.GraphicCardImage{
+    min-height: 99vh;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(27, 27, 34, 0.7),rgba(26, 26, 32, 0.7)),url(img/bat.jpg); */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/gcard.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.GraphicCardImage p{
+    text-align: center;
+    color: rgb(226, 226, 226);
+    font-size: 73px;
+    padding-top: 13%; 
+}
+
+.GamesImage{
+    min-height: 99vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(27, 27, 34, 0.7),rgba(26, 26, 32, 0.7)),url(images/pc3.jpeg);
+    /* background-image: url(img/pc1.jpg); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/*          footer              */
+
+
+.footer{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.footer h3{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4, .footer-col-5{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-col-1{
+    flex-basis: 30%;
+}
+.footer-col-2{
+    flex: 1;
+    text-align: center;
+}
+.footer-col-3, .footer-col-4, .footer-col-5{
+    flex-basis: 12%;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+}
+
+/*          animations          */
+@keyframes testkeyboard{
+    from{
+    transform: translateX(1%);
+    opacity: 0;
+    }
+    to{
+    transform: translate3d(0%);
+    opacity: 1;
+    }
+}
+
+.triggerAnimKeyboard{
+    -webkit-animation-name: testkeyboard;
+    animation-name: testkeyboard; 
+}
+
+@keyframes testPC{
+    from{
+    transform: translateX(-1%);
+    opacity: 0;
+    }
+    to{
+    transform: translate3d(0%);
+    opacity: 1;
+    }
+}
+
+.triggerAnimPC{
+    -webkit-animation-name: testPC;
+    animation-name: testPC; 
+}
+
+@keyframes testMouse{
+    from{
+    transform: translateX(1%);
+    opacity: 0;
+    }
+    to{
+    transform: translate3d(0%);
+    opacity: 1;
+    }
+}
+
+.triggerAnimMouse{
+    -webkit-animation-name: testMouse;
+    animation-name: testMouse; 
+}
+
+
+
+
+
+
+

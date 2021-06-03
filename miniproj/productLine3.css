@@ -1,0 +1,134 @@
+.parent{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-height: 50vh;
+    
+}
+
+.container{
+    position: relative;
+    padding: 25px;  /* Space Between every Container or Card */
+    
+}
+
+.container .card{
+    position: relative;
+    width: 250px;
+    height: 370px;
+    background-color: rgb(75, 75, 74);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.container .card:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #9bdc28;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+.container .card:hover:before{
+    clip-path: circle(300px at 80% -20%);
+
+}
+.container .card .imgBox{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-30%);
+    z-index: 10000;
+    width: 100%;
+    height: 307px;
+    transition: 0.5s;
+}
+
+.container .card:hover .imgBox{
+    top: -10%;
+    transform: translateY(0%);
+}
+
+.container .card .imgBox img{
+    max-width: 100%;
+    
+    object-fit: cover;
+
+}
+.container .card .contentBx{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+.container .card:hover .contentBx
+{
+    height: 210px;
+}
+.container .card .contentBx h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.container .card .contentBx .price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+}
+.container .card .contentBx .price h3{
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+.container .card .contentBx .price span{
+    width: 105px;
+    height: 34px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 29px;
+    display: inline-block;
+    color: #111;
+    background: cornsilk;
+    margin: 0 18px;
+    transition: 0.5px;
+    color: #111;
+    border-radius: 11px;
+}
+.container .card:hover .contentBx .price{
+    opacity: 0;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.container .card .contentBx a{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 51px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translate(50px);
+    transition: 0.5s;
+}
+.container .card:hover .contentBx a{
+    opacity: 1;
+    transform: translate(0px);
+    transition-delay: 0.25s;
+    
+}
+.container .card .contentBx a:hover{
+    background-color: #9bdc28;
+}
